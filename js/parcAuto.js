@@ -30,7 +30,7 @@ while (choice != 1) {
     {throw new Error(`
     Vous vous êtes fait arreter par la police!
     Vous recevez une amende de 90€ pour defaut d'assurance
-    Vous rentrez au garage`) ;}
+    Vous rentrez au garage (rafraichissez la page)`) ;}
   }
 }
 
