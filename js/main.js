@@ -65,7 +65,8 @@ while (choice != 5) {
           {
             console.error(`
         Vous vous êtes fait arreter par la police!
-        Vous recevez une amende de 90€ pour defaut d'assurance`
+        Vous recevez une amende de 135€ pour defaut d'assurance...
+        Maman va pas etre contente!!`
         );
           }
         }
