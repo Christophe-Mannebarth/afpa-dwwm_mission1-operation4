@@ -3,16 +3,7 @@ Ceci est le programme parcAuto
 fonctionnant avec la classVoiture
 */
 let car1 = new Car("AA-229-CD", "BLEU", 1576, 90, 45, 5);
-let reg = new String("AA-229-CD");
-let col = new String("BLEU");
-let pow = new String("90");
 
-try {
-  car1.insurance;
-} catch (e) {
-  alert(e.message);
-}
-// console.log(car1.toString());
 console.log(car1.welcome());
 console.log(car1.notice());
 console.log(car1.dashboard());
