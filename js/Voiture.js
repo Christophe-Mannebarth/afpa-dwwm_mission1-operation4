@@ -12,7 +12,6 @@ class Car {
     this.places = places;
     this.fuel = 5;
     this.insurance = false;
-    // this.newColor = null;
   }
   //Message d'acceuil du tableau de bord
   welcome() {
@@ -21,17 +20,11 @@ class Car {
   }
   // Fiche technique
   notice() {
-    if (this.insurance == false) {
-      return `
+    return `
     FICHE TECHNIQUE
     Ce véhicule `+col.toString()+` est immmatriculé `+reg.toString()+`
     Il pèse ${this.weight} Kg pour une puissance de `+pow.toString()+` chevaux.
     Il peut recevoir ${this.places} personnes et contenir ${this.capacity} litres d'essence.`;
-    } else {
-      return `
-    PARFAIT Ce véhicule est bien assuré
-    Vous pouvez démarrer`;
-    }
   }
   //checking de l'assurance
   checkInsurance() {

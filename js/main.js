@@ -75,7 +75,6 @@ while (choice != 5) {
         if (car1.insurance == false) {
           car1.insurance = true;
           console.log(`Vous souscrivez à une assurance`);
-          console.log(car1.notice());
           console.log(car1.dashboard());
         } else {
           alert(`Vous etes déja assuré!`);
