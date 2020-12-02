@@ -65,8 +65,8 @@ while (choice != 5) {
           {
             console.error(`
         Vous vous êtes fait arreter par la police!
-        Vous recevez une amende de 90€ pour defaut d'assurance
-        Vous rentrez au garage (rafraichissez la page)`);
+        Vous recevez une amende de 90€ pour defaut d'assurance`
+        );
           }
         }
         break;

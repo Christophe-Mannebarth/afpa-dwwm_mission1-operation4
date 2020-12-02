@@ -24,7 +24,7 @@ class Car {
     if (this.insurance == false) {
       return `
     FICHE TECHNIQUE
-    Ce véhicule est immmatriculé `+reg.toString()+`
+    Ce véhicule `+col.toString()+` est immmatriculé `+reg.toString()+`
     Il pèse ${this.weight} Kg pour une puissance de `+pow.toString()+` chevaux.
     Il peut recevoir ${this.places} personnes et contenir ${this.capacity} litres d'essence.`;
     } else {
@@ -45,7 +45,7 @@ class Car {
   dashboard() {
     return `
     TABLEAU DE BORD
-    Ce véhicule `+col.toString()+` contient ${this.fuel} litres d'essence
+    Ce véhicule ${this.color.toUpperCase()} contient ${this.fuel} litres d'essence
     Présence d'assurance = ${this.checkInsurance()}
     TAPEZ
     1 pour changer de couleur de carrosserie
