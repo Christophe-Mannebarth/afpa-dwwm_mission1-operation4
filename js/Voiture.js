@@ -93,18 +93,8 @@ class Car {
       this.consumption = (this.distance / 100) * 5;     
     } else if (91 <= this.speed && this.speed <= 130) {
       this.consumption = (this.distance / 100) * 8; 
-    } else if (131 <= this.speed && this.speed <= 150) {
+    } else if (this.speed > 130) {
       this.consumption = (this.distance / 100) * 12;
-      console.error(`
-      Vous vous êtes fait arreter par la police!
-      Vous recevez une amende de 135€ pour excès de vitesse...
-      Vous perdez 6 points sur votre permis de conduire`);
-    } else if (this.speed > 150) {
-      throw new Error(`
-      Vous vous êtes fait arreter par la police!
-      Vous recevez une amende de 135€ pour excès de vitesse...
-      Et vous perdez votre permis de conduire!!
-      Vous retournez au garage à pied (rafraichissez la page)`);
     }
     let possibleDist = (this.fuel / this.consumption) * 100;
     if (this.distance >= possibleDist) {
