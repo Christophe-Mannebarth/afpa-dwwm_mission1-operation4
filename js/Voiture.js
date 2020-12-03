@@ -17,6 +17,7 @@ class Car {
   }
   toString() {
   return `
+    Bienvenu dans votre véhicule!
     Références du Modele: (${this.registration}, ${this.color}, ${this.power})`;
   }
   //Fiche technique
@@ -73,14 +74,15 @@ class Car {
     Combien de litres d'essence voulez-vous ajouter?`;
   }
   checkFuel() {
-    if (this.newFuel <= parseInt(this.capacity) - parseInt(this.fuel)) {
-      this.fuel = parseInt(this.newFuel) + parseInt(this.fuel);
+    if (this.newFuel <= parseInt(this.capacity) - (this.fuel)) {
+      this.fuel = parseInt(this.newFuel) + (this.fuel);
       return `
     Ajout de ${this.newFuel} litres d'essence
     Le réservoir contient maintenant ${this.fuel} litres`;
     } else {
       return `
-    Vous ne pouvez pas depasser la capacité maximale du réservoir!!.`;
+      Vous ne pouvez pas mettre plus d'essence
+      que ce que le réservoir contient!!`
     }
   }
   // Se déplacer
@@ -91,8 +93,18 @@ class Car {
       this.consumption = (this.distance / 100) * 5;     
     } else if (91 <= this.speed && this.speed <= 130) {
       this.consumption = (this.distance / 100) * 8; 
-    } else if (131 <= this.speed) {
+    } else if (131 <= this.speed && this.speed <= 150) {
       this.consumption = (this.distance / 100) * 12;
+      console.error(`
+      Vous vous êtes fait arreter par la police!
+      Vous recevez une amende de 135€ pour excès de vitesse...
+      Vous perdez 6 points sur votre permis de conduire`);
+    } else if (this.speed > 150) {
+      throw new Error(`
+      Vous vous êtes fait arreter par la police!
+      Vous recevez une amende de 135€ pour excès de vitesse...
+      Et vous perdez votre permis de conduire!!
+      Vous retournez au garage à pied (rafraichissez la page)`);
     }
     let possibleDist = (this.fuel / this.consumption) * 100;
     if (this.distance >= possibleDist) {
@@ -104,20 +116,5 @@ class Car {
     Vous avez consommé ${this.consumption} litres, 
     il vous reste: ${this.fuel} litres dans votre réservoir`;
     }
-  }
-}
-
-//Classe enfant Modèle
-class Model extends Car {
-  constructor(registration, color, power, brand, year) {
-      super(registration, color, power);
-      this.brand = brand;
-      this.year = year;
-  }
-  toString() {
-    return `
-    Bienvenu dans votre ${this.brand}
-    Année de sortie: ${this.year} ` +
-    super.toString() 
   }
 }

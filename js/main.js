@@ -2,10 +2,9 @@
 Ceci est le programme parcAuto
 fonctionnant avec la classVoiture
 */
-let car1 = new Car("AA-229-CD", "BLEU", '90', '1575Kg', 45, 5);
-let model1 = new Model("AA-229-CD", "BLEU", '110ch', 'MERCEDES', 2010)
+let car1 = new Car("AA-229-CD", "BLEU", '110', '1575Kg', 45, 5);
 
-console.log(model1.toString());
+console.log(car1.toString());
 console.log(car1.notice());
 console.log(car1.dashboard());
 
@@ -29,8 +28,8 @@ while (choice != 5) {
       case "2": // Mettre de l'essence
         console.log(`Vous remplissez le reservoir`);
         console.log(car1.remainFuel());
-
-        let newFuel = prompt(`Tapez le nombre de litres d'essence désirés.`);
+        
+        newFuel = prompt(`Tapez le nombre de litres d'essence désirés.`);
         console.log(`Vous demandez ${newFuel} litres`);
         car1.newFuel = newFuel;
 
@@ -67,7 +66,8 @@ while (choice != 5) {
           console.log(`Vous souscrivez à une assurance`);
           console.log(car1.dashboard());
         } else {
-          alert(`Vous etes déja assuré!`);
+          console.error(`
+          Vous etes déja assuré!`);
         }
         break;
     }
