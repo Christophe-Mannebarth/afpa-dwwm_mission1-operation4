@@ -2,9 +2,10 @@
 Ceci est le programme parcAuto
 fonctionnant avec la classVoiture
 */
-let car1 = new Car("AA-229-CD", "BLEU", 1576, 90, 45, 5);
+let car1 = new Car("AA-229-CD", "BLEU", '90', '1575Kg', 45, 5);
+let model1 = new Model("AA-229-CD", "BLEU", '110ch', 'MERCEDES', 2010)
 
-console.log(car1.welcome());
+console.log(model1.toString());
 console.log(car1.notice());
 console.log(car1.dashboard());
 
@@ -49,17 +50,14 @@ while (choice != 5) {
           car1.speed = speed;
           let consumption = "";
           car1.consumption = consumption;
-
+          
           console.log(car1.move());
           console.log(car1.dashboard());
         } else {
-          {
-            console.error(`
+          console.error(`
         Vous vous êtes fait arreter par la police!
-        Vous recevez une amende de 135€ pour defaut d'assurance...
-        Maman va pas etre contente!!`
+        Vous recevez une amende de 135€ pour defaut d'assurance...`
         );
-          }
         }
         break;
 
@@ -77,6 +75,6 @@ while (choice != 5) {
     console.log(`
     Vous rentrez au garage...
     Merci d'avoir utilisé notre programme!
-    La ligue du Code vous salue bien!`);
+    La Ligue du Code vous salue bien!`);
   }
 }
